@@ -9,6 +9,9 @@ $config = [
     'bootstrap' => ['log'],
     'components' => [
         'request' => [
+            'parsers' => [
+                'application/json' => 'yii\web\JsonParser',
+            ],
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'jP207rCmYrYM8tD-bOh4lYxrxrNfyJ7d',
         ],
@@ -43,6 +46,7 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                ['class' => 'yii\rest\UrlRule', 'controller' => 'api/unit'],
             ],
         ],
     ],
